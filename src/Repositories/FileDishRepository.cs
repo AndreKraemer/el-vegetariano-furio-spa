@@ -18,7 +18,25 @@ namespace ElVegetarianoFurio.Repositories
 
         public Dish CreateDish(Dish dish)
         {
-            throw new NotImplementedException();
+            var dishes = GetDishes()?.ToList() ?? new List<Dish>();
+            if(dishes.Count == 0)
+            {
+                dish.Id = 1;
+            }
+            else
+            {
+                dish.Id = dishes.Max(x => x.Id) + 1;
+            }
+            dishes.Add(dish);
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var json = JsonSerializer.Serialize(dishes, options);
+            File.WriteAllText(_path, json);
+            return dish;
         }
 
         public void DeleteDish(int id)
