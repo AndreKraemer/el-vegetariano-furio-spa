@@ -41,7 +41,15 @@ namespace ElVegetarianoFurio.Repositories
 
         public void DeleteDish(int id)
         {
-            throw new NotImplementedException();
+            var dishes = GetDishes().Where(x => x.Id != id);
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var json = JsonSerializer.Serialize(dishes, options);
+            File.WriteAllText(_path, json);
         }
 
         public Dish GetDishById(int id)
