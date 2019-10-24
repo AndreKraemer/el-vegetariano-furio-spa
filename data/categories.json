@@ -1,0 +1,31 @@
+[{
+        "id": 1,
+        "name": "Ensaladas",
+        "description": "Salate"
+    },
+    {
+        "id": 2,
+        "name": "Cremas y sopas",
+        "description": "Suppen"
+    },
+    {
+        "id": 3,
+        "name": "Tapas",
+        "description": "Kleine Portionen"
+    },
+    {
+        "id": 4,
+        "name": "Platos principales",
+        "description": "Hauptgerichte"
+    },
+    {
+        "id": 5,
+        "name": "Postres",
+        "description": "Nachspeisen"
+    },
+    {
+        "id": 6,
+        "name": "Bebidas",
+        "description": "Getränke"
+    }
+]
