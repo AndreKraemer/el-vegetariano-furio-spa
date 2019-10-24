@@ -44,7 +44,7 @@
     {
          "id": 7,
         "name": "Pimientos al grill",
-        "description": "Gegrillte Paprikas",
+        "description": "Gegrillte Paprika",
         "price": 2.99,
         "categoryId": 3
     },
@@ -94,7 +94,7 @@
     {
         "id": 14,
         "name": "Arroz con verduras",
-        "description": "Reis- / Gemüsepfanne",
+        "description": "Reis-/Gemüsepfanne",
         "price": 4.49,
         "categoryId": 4
     },
@@ -109,7 +109,7 @@
     {
         "id": 16,
         "name": "Crema Catalana",
-        "description": "Catalanische Creme",
+        "description": "Katalanische Creme",
         "price": 2.49,
         "categoryId": 5
     },
@@ -150,7 +150,7 @@
         "categoryId": 6
     },
     {
-        "id": 21,
+        "id": 22,
         "name": "Café",
         "description": "Kaffee",
         "price": 1.59,

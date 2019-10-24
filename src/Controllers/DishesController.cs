@@ -47,6 +47,24 @@ namespace ElVegetarianoFurio.Controllers
             return CreatedAtAction("Get", new { id = dish.Id }, result);
         }
 
-        
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Dish dish)
+        {
+            if(id != dish.Id)
+            {
+                return BadRequest();
+            }
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if(_repository.GetDishById(id) == null)
+            {
+                return NotFound();
+            }
+
+            var result = _repository.UpdateDish(dish);
+            return Ok(result);
+        }
     }
 }

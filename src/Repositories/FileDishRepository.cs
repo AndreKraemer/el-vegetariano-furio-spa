@@ -65,7 +65,21 @@ namespace ElVegetarianoFurio.Repositories
 
         public Dish UpdateDish(Dish dish)
         {
-            throw new NotImplementedException();
+            var dishes = GetDishes();
+            var dishToUpdate = dishes.SingleOrDefault(x => x.Id == dish.Id);
+            dishToUpdate.Name = dish.Name;
+            dishToUpdate.Price = dish.Price;
+            dishToUpdate.Description = dish.Description;
+            dishToUpdate.CategoryId = dish.CategoryId;
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var json = JsonSerializer.Serialize(dishes, options);
+            File.WriteAllText(_path, json);
+            return dish;
         }
     }
 }
