@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ElVegetarianoFurio.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace ElVegetarianoFurio.Repositories
@@ -27,7 +28,7 @@ namespace ElVegetarianoFurio.Repositories
 
         public Dish GetDishById(int id)
         {
-            throw new NotImplementedException();
+            return GetDishes()?.FirstOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<Dish> GetDishes()

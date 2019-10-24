@@ -23,5 +23,17 @@ namespace ElVegetarianoFurio.Controllers
         {
             return _repository.GetDishes();
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var dish = _repository.GetDishById(id);
+            if(dish == null)
+            {
+                return NotFound();
+            }
+        
+            return Ok(dish);
+        }
     }
 }
