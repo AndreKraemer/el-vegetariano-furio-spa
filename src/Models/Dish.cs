@@ -1,9 +1,14 @@
-﻿namespace ElVegetarianoFurio.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ElVegetarianoFurio.Models
 {
     public class Dish
     {
         public int Id { get; set; }
+        [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
+        [MaxLength(250)]
         public string Description { get; set; }
         public double Price { get; set; }
         public int CategoryId { get; set; }
