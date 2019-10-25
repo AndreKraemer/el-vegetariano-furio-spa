@@ -9,50 +9,50 @@ using System.IO;
 namespace ElVegetarianoFurio.Controllers
 {
     [Route("api/[controller]")]
-    public class DishesController : Controller
+    public class CategoriesController : Controller
     {
-        private readonly IDishRepository _repository;
+        private readonly ICategoryRepository _repository;
         private readonly string _path;
 
-        public DishesController(IDishRepository repository, IWebHostEnvironment env)
+        public CategoriesController(ICategoryRepository repository, IWebHostEnvironment env)
         {
             _repository = repository;
-            _path = Path.Combine(env.ContentRootPath, "data", "images", "dishes");
+            _path = Path.Combine(env.ContentRootPath, "data", "images", "categories");
         }
 
         [HttpGet]
-        public IEnumerable<Dish> Get()
+        public IEnumerable<Category> Get()
         {
-            return _repository.GetDishes();
+            return _repository.GetCategories();
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var dish = _repository.GetDishById(id);
-            if(dish == null)
+            var category = _repository.GetCategoryById(id);
+            if(category == null)
             {
                 return NotFound();
             }
         
-            return Ok(dish);
+            return Ok(category);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Dish dish)
+        public IActionResult Post([FromBody] Category category)
         {
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var result = _repository.CreateDish(dish);
-            return CreatedAtAction("Get", new { id = dish.Id }, result);
+            var result = _repository.CreateCategory(category);
+            return CreatedAtAction("Get", new { id = category.Id }, result);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Dish dish)
+        public IActionResult Put(int id, [FromBody] Category category)
         {
-            if(id != dish.Id)
+            if(id != category.Id)
             {
                 return BadRequest();
             }
@@ -60,27 +60,27 @@ namespace ElVegetarianoFurio.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if(_repository.GetDishById(id) == null)
+            if(_repository.GetCategoryById(id) == null)
             {
                 return NotFound();
             }
 
-            var result = _repository.UpdateDish(dish);
+            var result = _repository.UpdateCategory(category);
             return Ok(result);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            if(_repository.GetDishById(id) == null)
+            if(_repository.GetCategoryById(id) == null)
             {
                 return NotFound();
             }
-            _repository.DeleteDish(id);
+            _repository.DeleteCategory(id);
             return NoContent();
         }
 
-        [HttpGet("{id}/imagegit")]
+        [HttpGet("{id}/image")]
         public IActionResult Image(int id)
         {
             var file = Path.Combine(_path, $"{id}.jpg");

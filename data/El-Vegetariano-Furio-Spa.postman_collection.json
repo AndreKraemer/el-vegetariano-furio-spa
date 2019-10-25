@@ -6,159 +6,324 @@
 	},
 	"item": [
 		{
-			"name": "Get Dishes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:5001/api/dishes",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"dishes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get DishBy Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:5001/api/dishes/1",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"dishes",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Dish By Id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:5001/api/dishes/1",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"dishes",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Dish",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+			"name": "Dishes",
+			"item": [
+				{
+					"name": "Get Dishes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/dishes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"dishes"
+							]
+						}
 					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Ensalada Fantasia\",\n    \"description\": \"Salat mit allen Zutaten, die in der Küche übrig waren.\",\n    \"price\": 3.49,\n    \"categoryId\": 1\n}"
+					"response": []
 				},
-				"url": {
-					"raw": "https://localhost:5001/api/dishes",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"dishes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Dish",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+				{
+					"name": "Get DishBy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/dishes/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"dishes",
+								"1"
+							]
+						}
 					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"id\": 1,\n    \"name\": \"Ensalada Fantasia\",\n    \"description\": \"Salat mit allen Zutaten, die in der Küche übrig waren.\",\n    \"price\": 9.99,\n    \"categoryId\": 1\n}"
+					"response": []
 				},
-				"url": {
-					"raw": "https://localhost:5001/api/dishes/1",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"dishes",
-						"1"
-					]
+				{
+					"name": "Get Dish Image By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/dishes/2/image",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"dishes",
+								"2",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Dish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ensalada Fantasia\",\n    \"description\": \"Salat mit allen Zutaten, die in der Küche übrig waren.\",\n    \"price\": 3.49,\n    \"categoryId\": 1\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/dishes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Dish",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n    \"name\": \"Ensalada Fantasia\",\n    \"description\": \"Salat mit allen Zutaten, die in der Küche übrig waren.\",\n    \"price\": 9.99,\n    \"categoryId\": 1\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/dishes/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"dishes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Dish By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/dishes/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"dishes",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get Dish Image By Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://localhost:5001/api/dishes/2/image",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"dishes",
-						"2",
-						"image"
-					]
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/categories",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/categories/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category Image By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/categories/3/image",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"categories",
+								"3",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Para los Niños\",\n    \"description\": \"Kinderteller\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/categories",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 7,\n    \"name\": \"Para los Niños\",\n    \"description\": \"Kinderteller (nur bis 12 Jahre)\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/categories/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"categories",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/categories/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"categories",
+								"7"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
