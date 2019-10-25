@@ -26,8 +26,8 @@ namespace ElVegetarianoFurio
             services.AddDbContext<VegiContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("VegiContext")));
             services.AddControllersWithViews();
-            services.AddScoped<IDishRepository, FileDishRepository>();
-            services.AddScoped<ICategoryRepository, FileCategoryRepository>();
+            services.AddScoped<IDishRepository, EfDishRepository>();
+            services.AddScoped<ICategoryRepository, EfCategoryRepository>();
                         
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
