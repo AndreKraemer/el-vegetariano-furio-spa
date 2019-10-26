@@ -1,4 +1,4 @@
-import { Dish } from "../dish/dish";
+import { Dish } from '../dish/dish';
 
 export interface Category {
     id: number;
