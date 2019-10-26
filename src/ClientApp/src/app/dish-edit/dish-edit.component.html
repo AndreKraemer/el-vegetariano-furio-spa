@@ -1,0 +1,16 @@
+<div *ngIf="!dish">
+    Lade ...
+</div>
+<div *ngIf="dish" class="form-container">
+    <mat-form-field>
+        <input matInput placeholder="Name" name="name" [(ngModel)]="dish.name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Beschreibung" name="description" [(ngModel)]="dish.description">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Preis" name="price" [(ngModel)]="dish.price" type="number">
+    </mat-form-field>
+</div>
+<button mat-button (click)="saveDish()">Speichern</button>
+<button mat-button (click)="back()">Abbrechen</button>

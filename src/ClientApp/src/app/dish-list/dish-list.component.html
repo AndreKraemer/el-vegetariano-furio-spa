@@ -7,7 +7,9 @@
         <mat-card-subtitle>{{dish.description}}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="/api/dishes/{{dish.id}}/image" alt="Foto von  {{dish.name}}">
-
+    <mat-card-actions>
+            <button mat-button [routerLink]="['/dishes', dish.id]">Details</button>
+        </mat-card-actions>
     <mat-card-footer align="end" class="dish-card-footer">
         {{dish.price | currency:'EUR' }}
     </mat-card-footer>
