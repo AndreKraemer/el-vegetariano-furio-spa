@@ -26,6 +26,12 @@ export class DishEditComponent implements OnInit {
       .subscribe(() => this.location.back());
   }
 
+  deleteDish() {
+    this.dishService
+      .deleteDish(this.dish.id)
+      .subscribe(() => this.location.back());
+  }
+
   back() {
     this.location.back();
   }

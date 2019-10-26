@@ -17,4 +17,8 @@ export class DishService {
   updateDish(dish: Dish): Observable<Dish> {
     return this.http.put<Dish>(`/api/dishes/${dish.id}`, dish);
   }
+
+  deleteDish(id: number): Observable<object> {
+    return this.http.delete(`/api/dishes/${id}`);
+  }
 }
