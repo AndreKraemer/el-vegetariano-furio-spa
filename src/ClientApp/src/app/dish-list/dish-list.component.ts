@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute } from '@angular/router';
+import { Dish } from '../dish/dish';
+import { CategoryService } from '../category/category.service';
+import { Category } from '../category/category';
 
 @Component({
   selector: 'app-dish-list',
@@ -7,12 +10,16 @@ import {ActivatedRoute } from '@angular/router';
   styleUrls: ['./dish-list.component.css']
 })
 export class DishListComponent implements OnInit {
-  categoryId = 0;
+  category: Category;
   constructor(
-     private route: ActivatedRoute) { }
+     private route: ActivatedRoute,
+     private categoryService: CategoryService) { }
 
   ngOnInit() {
-    this.categoryId = +this.route.snapshot.paramMap.get('categoryId');
+    const categoryId = +this.route.snapshot.paramMap.get('categoryId');
+    this.categoryService
+      .getCategory(categoryId)
+      .subscribe(category => this.category = category);
   }
 
 }

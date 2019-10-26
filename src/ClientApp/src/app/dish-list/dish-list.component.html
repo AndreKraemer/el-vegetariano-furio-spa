@@ -1,1 +1,14 @@
-{{categoryId}}
+<h1>{{category?.name}}</h1>
+
+<mat-card class="dish-card" *ngFor="let dish of category?.dishes">
+
+    <mat-card-header>
+        <mat-card-title>{{dish.name}}</mat-card-title>
+        <mat-card-subtitle>{{dish.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="/api/dishes/{{dish.id}}/image" alt="Foto von  {{dish.name}}">
+
+    <mat-card-footer align="end" class="dish-card-footer">
+        {{dish.price | currency:'EUR' }}
+    </mat-card-footer>
+</mat-card>
