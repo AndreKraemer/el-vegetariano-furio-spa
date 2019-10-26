@@ -9,24 +9,27 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategoryComponent } from './category/category.component';
+import { CategoryService } from './category/category.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: CategoryComponent, pathMatch: 'full' },
     ]),
     BrowserAnimationsModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
