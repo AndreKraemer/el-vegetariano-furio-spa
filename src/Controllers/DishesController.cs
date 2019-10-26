@@ -80,7 +80,7 @@ namespace ElVegetarianoFurio.Controllers
             return NoContent();
         }
 
-        [HttpGet("{id}/imagegit")]
+        [HttpGet("{id}/image")]
         public IActionResult Image(int id)
         {
             var file = Path.Combine(_path, $"{id}.jpg");
