@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryComponent } from './category/category.component';
 import { CategoryService } from './category/category.service';
+import { DishListComponent } from './dish-list/dish-list.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CategoryService } from './category/category.service';
     NavMenuComponent,
     HomeComponent,
     CategoryComponent,
+    DishListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,6 +29,7 @@ import { CategoryService } from './category/category.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: CategoryComponent, pathMatch: 'full' },
+      { path: 'categories/:categoryId/dishes', component: DishListComponent}
     ]),
     BrowserAnimationsModule,
     MatButtonModule,

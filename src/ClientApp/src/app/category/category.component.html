@@ -6,6 +6,6 @@
     </mat-card-header>
     <img mat-card-image src="/api/categories/{{category.id}}/image" alt="Foto von  {{category.description}}">
     <mat-card-actions>
-        <button mat-button>Details</button>
+        <button mat-button [routerLink]="['/categories', category.id, 'dishes']">Details</button>
     </mat-card-actions>
 </mat-card>
